@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JQuery Assignment</title>
+	
+	<script src="../jQuery.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("input[type='text']").change(function(e){
+				e.preventDefault();
+				
+				var $this = $(this);
+				$this.next("p.msg").remove();
+				$this.after("<p class='msg'>Input value for <strong>" + $this.attr("name") + "</strong> got changed.");
+			});			
+		});
+	</script>
+
+</head>
+
+<body>
+	<form>
+		<form name='demo_form'>
+		 First name: <input type="text" name="fname"><br>
+		 Last name: <input type="text" name="lname"><br>
+		 <input type="submit" value="Submit">
+		</form>
+	</form>
+
+</body>
+</html>
